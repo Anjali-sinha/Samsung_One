@@ -1,7 +1,6 @@
 package com.example.Blockchain_App.Adapters;
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +8,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.Blockchain_App.Model.Guests_Requests;
 import com.example.Blockchain_App.R;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 public class Guest_Requests_Adapter extends RecyclerView.Adapter<Guest_Requests_Adapter.ViewHolder>
 {
-    List<> Guests_RequestsList;
+    List<Guests_Requests> Guests_RequestsList;
     Context context;
 
     public Guest_Requests_Adapter(List<Guests_Requests> Guests_RequestsList)
@@ -31,7 +33,7 @@ public class Guest_Requests_Adapter extends RecyclerView.Adapter<Guest_Requests_
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         Guests_Requests request = Guests_RequestsList.get(position);
 
         holder.guestname.setText(request.getGuest_name());
@@ -67,5 +69,4 @@ public class Guest_Requests_Adapter extends RecyclerView.Adapter<Guest_Requests_
         }
 
     }
-}
 }
