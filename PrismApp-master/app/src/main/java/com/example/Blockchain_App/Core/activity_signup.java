@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import static android.content.ContentValues.TAG;
 
@@ -26,6 +28,9 @@ public class activity_signup extends AppCompatActivity {
 
 
     private FirebaseAuth mAuth;
+   private  FirebaseDatabase realtimeDB = FirebaseDatabase.getInstance();
+    private DatabaseReference realtimeDBReference = realtimeDB.getReference("prism-project-8c89e-default-rtdb");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +56,8 @@ public class activity_signup extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
+
+
                             Intent homeIntent = new Intent(activity_signup.this,HomeActivity.class);
                             startActivity(homeIntent);
 

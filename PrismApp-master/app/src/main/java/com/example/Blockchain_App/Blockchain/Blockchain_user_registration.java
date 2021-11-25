@@ -76,21 +76,21 @@ public class Blockchain_user_registration extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                if (!flag) {
-                    btn_register.setEnabled(false);
-                    dispatchPictureTakerAction();
+                if(flag){
+                    uploadImage();
                 } else{
-                    Toast.makeText(getApplicationContext(),"No Selfie taken",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Blockchain_user_registration.this,"no image to upload", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 
         btn_takepic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                uploadImage();
-               flag = true;
 
+                dispatchPictureTakerAction();
+                flag = true;
             }
         });
 
@@ -102,6 +102,7 @@ public class Blockchain_user_registration extends AppCompatActivity
 
     private void uploadImage()
     {
+
         // gets file path
         File file = new File(filefinal);
         // get retrofit instance

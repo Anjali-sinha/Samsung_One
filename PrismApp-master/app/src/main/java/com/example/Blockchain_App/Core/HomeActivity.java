@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class HomeActivity extends AppCompatActivity
 {
 
-    private Button btn_reg, btn_verify,btn_logout;
+    private Button btn_reg, btn_verify,btn_logout,btn_requests;
     private FirebaseAuth mAuth;
 
     @Override
@@ -55,6 +55,15 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
+        btn_requests.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent req_Intent = new Intent(HomeActivity.this,Activity_requests.class);
+                startActivity(req_Intent);
+                finish();
+            }
+        });
+
     }
 
     private void init()
@@ -62,6 +71,7 @@ public class HomeActivity extends AppCompatActivity
        btn_reg = findViewById(R.id.btn_blockchain_reg);
        btn_verify = findViewById(R.id.btn_blockchain_verify);
        btn_logout = findViewById(R.id.btn_logout);
+       btn_requests = findViewById(R.id.btn_requests);
    }
 
    private void Logout()

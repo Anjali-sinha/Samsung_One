@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Core.Activity_requests"
+            android:exported="true" />
         <activity android:name=".Blockchain.Blockchain_user_verification" />
         <activity android:name=".Blockchain.Blockchain_user_registration" />
 
